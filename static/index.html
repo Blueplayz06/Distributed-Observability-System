@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributed API Observability Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <div class="title-area">
+                <h1>API Observability <span>System</span></h1>
+                <p>Real-time distributed metrics & fault detection</p>
+            </div>
+            <div class="controls">
+                <span class="mode-label">Traffic Mode:</span>
+                <label class="switch">
+                    <input type="checkbox" id="load-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span id="mode-text">Normal Load</span>
+            </div>
+        </header>
+
+        <div id="alert-banner" class="alert-banner hidden">
+            ⚠️ HIGH ERROR RATE DETECTED (>30%) ⚠️
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h3>Total Requests</h3>
+                <div class="metric-value" id="total-requests">0</div>
+            </div>
+            <div class="metric-card">
+                <h3>Error Rate</h3>
+                <div class="metric-value" id="error-rate">0.0%</div>
+            </div>
+            <div class="metric-card">
+                <h3>Avg Response Time</h3>
+                <div class="metric-value" id="avg-response-time">0 ms</div>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-container">
+                <h2>Node Distribution</h2>
+                <canvas id="nodeDistChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>Live Traffic (Requests / sec)</h2>
+                <canvas id="liveTrafficChart"></canvas>
+            </div>
+        </div>
+
+        <div class="node-status-section">
+            <h2>Node Status</h2>
+            <div class="nodes-grid" id="nodes-grid">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
