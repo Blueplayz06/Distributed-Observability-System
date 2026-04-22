@@ -63,4 +63,3 @@ Open your browser and navigate to:
 4. **Simulate Node Failure**: Go to the terminal running the nodes (`python main.py`) and stop the process (`Ctrl+C`). Watch the dashboard detect the heartbeat failure and mark the nodes as offline after 5 seconds.
 
 ---
-*Built as a Final Project demonstrating distributed systems, real-time observability, and modern web aesthetics.*
